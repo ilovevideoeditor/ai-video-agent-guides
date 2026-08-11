@@ -1,0 +1,104 @@
+---
+title: Review AI video before rendering
+description: A practical review gate for claims, pacing, layout, assets, and execution.
+---
+
+# Review AI video before rendering
+
+The cheapest render failure is the one you catch while the video is still a plan.
+
+An AI video agent can create an attractive sequence that is factually wrong, off-brand, too dense for a phone screen, or impossible to render with the available assets. A review gate prevents those problems from becoming expensive MP4 jobs.
+
+The goal is not to make every decision manual. It is to divide checks into two groups: deterministic rules that software can enforce and judgment calls that a human should approve.
+
+## Gate 1: claims and source evidence
+
+Start with the words that could create risk.
+
+For every product claim, number, quotation, or comparison, record the source supplied to the agent. If the plan cannot point to evidence, the claim should be removed or marked for approval.
+
+A useful content record contains:
+
+- the exact approved wording;
+- the source or owner of the fact;
+- whether paraphrasing is allowed;
+- required legal or disclosure language;
+- the destination of the call to action.
+
+Do this before layout. A perfectly animated unsupported claim is still an unsupported claim.
+
+## Gate 2: story and duration
+
+A scene plan should make its allocation of time obvious. For a short social video, every scene needs a job: hook, explanation, proof, transition, or action.
+
+Check that:
+
+1. the hook communicates one idea quickly;
+2. each later scene advances the same promise;
+3. proof appears before the call to action;
+4. repeated information has been removed;
+5. the CTA has a dedicated reading window;
+6. total scene time equals the requested duration.
+
+Transitions consume time too. A one-second transition inside a two-second scene can leave too little stable time for the viewer to understand the content.
+
+## Gate 3: text hierarchy
+
+A text layer can pass schema validation and still fail visually.
+
+Review the plan at the target resolution, not on a large desktop preview. Confirm that the viewer can distinguish the hook, supporting copy, proof, captions, and action without guessing.
+
+Deterministic checks should cover maximum width, line count, minimum fitted size, safe margins, and contrast. Human review should cover tone, emphasis, rhythm, and whether the most important words actually look important.
+
+Avoid solving overflow by shrinking everything. Shorter copy is usually the better repair.
+
+## Gate 4: media and cropping
+
+Every asset should have an explicit role and source.
+
+For images and video, verify accessibility, content type, dimensions, duration, and expected crop behavior. Decide which subject must remain visible when a landscape source is placed into a vertical frame.
+
+Optional media needs a declared fallback. Without one, the renderer should reject the composition instead of inventing a replacement.
+
+For generated media, preserve the generation input or provenance next to the asset. Reviewers need to know whether a visual is supplied, licensed, generated, or transformed.
+
+## Gate 5: motion and accessibility
+
+Motion creates hierarchy when it is intentional and noise when every layer competes.
+
+Check entrance order, transition overlap, reading time, flashing, caption timing, and audio fades. A useful default is to stagger related entrances rather than start all layers on the same frame.
+
+Captions deserve their own review. Confirm that they match the spoken content, remain inside safe areas, and do not cover product controls, faces, or the CTA.
+
+## Gate 6: the immutable render request
+
+After approval, compile the plan into an immutable composition revision. The render request should specify exact dimensions, frame rate, duration, source assets, and an idempotency key.
+
+At this point, the renderer should not rewrite copy, choose new media, or reinterpret the creative brief. It should validate and execute.
+
+If validation fails, return a structured error with the scene, layer, rule, and suggested repair. The planning stage can then create a new revision without changing unrelated decisions.
+
+## Gate 7: artifact acceptance
+
+A completed job is ready for review, not automatically ready for distribution.
+
+Watch the exported video from beginning to end and compare it with the approved brief. Look for clipped text, unexpected crops, black frames, missing media, caption drift, audio discontinuities, weak pacing, and an unreadable final action.
+
+Record creative acceptance separately from technical completion. That distinction lets engineering measure render reliability while creative teams measure communication quality.
+
+## A compact release decision
+
+Publish only when all four statements are true:
+
+- the message is approved and supported;
+- the composition passes deterministic checks;
+- the render job completed from the approved revision;
+- the final artifact passed visual and editorial review.
+
+This gate is small enough to automate and explicit enough for a human to trust.
+
+[Explore iLoveVideoEditor tools for video agents](https://ilovevideoeditor.com/agents/tools?utm_source=docs-page&utm_medium=organic_content&utm_campaign=review-before-render&utm_content=guide) and read the [JSON-to-MP4 first-render guide](https://ilovevideoeditor.dev/guides/json-to-mp4-first-render?utm_source=docs-page&utm_medium=organic_content&utm_campaign=review-before-render&utm_content=first-render).
+
+---
+
+_Disclosure: This guide is published by the iLoveVideoEditor team and reflects review practices used in our own video automation work._
