@@ -1,0 +1,15 @@
+{
+  "name": "iLoveVideoEditor Agent Guides",
+  "description": "Reviewable patterns for AI video planning, VideoJSON composition, and production rendering.",
+  "sidebar": [
+    {
+      "group": "AI Video Engineering",
+      "pages": [
+        {
+          "title": "Review before render",
+          "href": "/"
+        }
+      ]
+    }
+  ]
+}
