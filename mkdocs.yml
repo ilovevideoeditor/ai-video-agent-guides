@@ -1,0 +1,10 @@
+site_name: iLoveVideoEditor AI Video Agent Guides
+site_description: Production patterns for deterministic VideoJSON composition and reliable AI video rendering.
+site_url: https://ilovevideoeditor-ai-video-agent-guides.readthedocs.io/
+repo_url: https://github.com/ilovevideoeditor/ai-video-agent-guides
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
